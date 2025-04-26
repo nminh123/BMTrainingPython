@@ -23,25 +23,29 @@
 #B2: Cho mảng 1 chiều A với n phần tử. Đếm số phần tử khác nhau của mảng A
 
 #Bài 1:
-a = 0
-b = 10
-
-C = []
-
-for i in range(a, b):
-    C.append(i)
-
-C.sort(reverse=True)
-print(C)
-
+# a = 0
+# b = 10
+#
+# C = []
+#
+# for i in range(a, b):
+#     C.append(i)
+#
+# C.sort(reverse=True)
+# print(C)
 #Bài 2:
-def bai_2():
-    A = [1, 5, 2, 4, 2, 1, 5, 6, 7, 8, 12, 6, 5]
-    count = 0
-    for i in range(len(A) - 1):
-        if (A[i] != A[i + 1]):
-            count = count + 1
+# def bai_2():
+#     count = 0
+#     A = [1, 5, 2, 4, 2, 1, 5, 6, 7, 8, 12, 6, 5]
+#     for i in range(len(A)):
+#         if A[i] not in A[:i]:
+#             count += 1
+#     return count
+#
+# print(bai_2())
 
-    return count
+#Mảng 2 chiều
+#Bài 1: Viết hàm sinh ra mảng 2 chiều n cột và m dòng gồm toàn số 0
+#Bài 2: Viết ma trận (mxn) số nguyên trong khoản a,b
+#Bài 3: Viết ma trận hình xoắn óc.
 
-print(bai_2())
