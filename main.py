@@ -1,3 +1,4 @@
+import random
 #Cách 1: Tạo mảng n số 0
 # n = 10
 # A = [0] * n
@@ -49,3 +50,46 @@
 #Bài 2: Viết ma trận (mxn) số nguyên trong khoản a,b
 #Bài 3: Viết ma trận hình xoắn óc.
 
+#Bài 1:
+def Zero2DArray(m, n):
+    arr = [[0 for _ in range(n)] for _ in range(m)]
+    return arr
+
+arr = Zero2DArray(4, 4)
+
+for row in arr:
+    print(row)
+
+#Bài 2:
+def matrix(n, a, b):
+    return [[random.randint(a, b) for i in range(n)] for j in range(n)]
+
+matrix_vari = matrix(3, 30, 50)
+for row in matrix_vari:
+    print(row)
+
+#Bài 3:
+def ma_tran_xoan_oc(n):
+    A = [[0 for _ in range(n)] for _ in range(n)] # Sinh ma tran kich thuoc n x n co gia tri cac phan tu la 0
+    # print(A)
+    dir = [(0, 1), (1, 0), (0, -1), (-1, 0)] #Hướng di chuyển
+    k = 1 #Giá trị điền vào mảng
+    h = 0 #Lưu trữ hướng đang duyệt mảng
+    i,j = 0,0 #Vị trí xuất phát
+    A[i][j] = k
+    while k < n * n:
+        oi = i + dir[h][0]
+        oj = j + dir[h][1]
+        if(0 <= oi < n and 0 <= oj < n and A[oi][oj]) == 0:
+            i,j = oi, oj
+            A[i][j] = k + 1
+            k = k + 1
+        else:
+            h = (h + 1) % 4 #Chuyển hướng
+    return A
+
+
+a = ma_tran_xoan_oc(4)
+
+for row in a:
+    print(row)
